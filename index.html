@@ -157,8 +157,7 @@
       document.addEventListener('DOMContentLoaded', () => {
           const map = document.getElementById('svg-turkey-map');
           const cityNameDisplay = document.getElementById('city-name');
-  
-          // Şehir üzerine gelindiğinde şehir adını göster
+
           map.addEventListener('mouseover', (e) => {
               if (e.target.classList.contains('city')) {
                   const cityName = e.target.getAttribute('data-city-name');
@@ -170,7 +169,6 @@
               }
           });
   
-          // Fare hareketiyle şehir adını takip ettir
           map.addEventListener('mousemove', (e) => {
               if (cityNameDisplay.classList.contains('show-city-name--active')) {
                   const { pageX: x, pageY: y } = e;
@@ -186,12 +184,11 @@
               }
           });
   
-          // Şehir tıklandığında data-url'e yönlendir
           map.addEventListener('click', (e) => {
               if (e.target.classList.contains('city')) {
                   const url = e.target.getAttribute('data-url');
                   if (url) {
-                      window.location.href = url; // URL'ye yönlendir
+                      window.location.href = url;
                   }
               }
           });
